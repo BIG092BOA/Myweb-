@@ -1,22 +1,179 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <title>Ifenna Profile</title>
-  </head>
-  <body>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ifenna Augustine | Dev & Designer</title>
+    <style>
+        :root {
+            --primary: #58a6ff;
+            --success: #238636;
+            --bg: #0d1117;
+            --card-bg: rgba(22, 27, 34, 0.8);
+        }
 
-    <h1>OKOLI IFENNA AUGUSTINE</h1>
-    <p>Mobile-First Developer & Designer</p>
+        * { box-sizing: border-box; transition: all 0.3s ease; }
 
-    <h3>My Core Skills</h3>
-    <ul>
-      <li>Python & HTML/CSS</li>
-      <li>Digital Branding</li>
-      <li>UI/UX Wireframing</li>
-      <li>Mobile App Development</li>
-    </ul>
+        body {
+            background-color: var(--bg);
+            background-image: radial-gradient(circle at top right, #161b22, #0d1117);
+            color: #c9d1d9;
+            font-family: 'Inter', -apple-system, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            padding: 20px;
+        }
 
-    <button>LET'S WORK TOGETHER</button>
+        .container {
+            background: var(--card-bg);
+            backdrop-filter: blur(10px);
+            border: 1px solid #30363d;
+            border-radius: 24px;
+            padding: 40px 30px;
+            max-width: 450px;
+            width: 100%;
+            text-align: center;
+            animation: fadeIn 1s ease-out;
+            box-shadow: 0 20px 50px rgba(0,0,0,0.5);
+        }
 
-  </body>
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .avatar-ring {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            background: linear-gradient(45deg, var(--primary), #bc8cf2);
+            margin: 0 auto 20px;
+            padding: 3px;
+        }
+
+        .avatar-placeholder {
+            width: 100%;
+            height: 100%;
+            background: #0d1117;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            font-size: 2rem;
+            color: var(--primary);
+        }
+
+        h1 {
+            font-size: 1.8rem;
+            margin: 10px 0;
+            letter-spacing: -1px;
+            color: white;
+            text-transform: uppercase;
+        }
+
+        .tagline {
+            color: var(--primary);
+            font-size: 0.9rem;
+            font-weight: 600;
+            margin-bottom: 30px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .section-title {
+            text-align: left;
+            font-size: 0.8rem;
+            color: #8b949e;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+        }
+
+        .skill-list {
+            list-style: none;
+            padding: 0;
+            margin-bottom: 30px;
+        }
+
+        .skill-item {
+            background: #21262d;
+            margin: 10px 0;
+            padding: 15px;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            border: 1px solid transparent;
+            cursor: pointer;
+        }
+
+        .skill-item:hover {
+            border-color: var(--primary);
+            transform: translateX(5px);
+            background: #282e38;
+        }
+
+        .icon { margin-right: 15px; font-size: 1.2rem; }
+
+        .cta-button {
+            background: linear-gradient(to right, #238636, #2ea043);
+            color: white;
+            text-decoration: none;
+            padding: 18px;
+            border-radius: 12px;
+            display: block;
+            font-weight: bold;
+            font-size: 1rem;
+            border: none;
+            box-shadow: 0 4px 15px rgba(35, 134, 54, 0.3);
+            cursor: pointer;
+            width: 100%;
+        }
+
+        .cta-button:active { transform: scale(0.98); }
+
+        .footer-note {
+            margin-top: 25px;
+            font-size: 0.7rem;
+            color: #484f58;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <div class="avatar-ring">
+            <div class="avatar-placeholder">IA</div>
+        </div>
+        
+        <h1>Okoli Ifenna Augustine</h1>
+        <div class="tagline">Mobile Systems Architect</div>
+
+        <div class="section-title">CORE CAPABILITIES</div>
+        <div class="skill-list">
+            <div class="skill-item">
+                <span class="icon">🐍</span>
+                <span>Python & Logic Development</span>
+            </div>
+            <div class="skill-item">
+                <span class="icon">🎨</span>
+                <span>UI/UX & Digital Branding</span>
+            </div>
+            <div class="skill-item">
+                <span class="icon">🛠️</span>
+                <span>Task Manager Architecture</span>
+            </div>
+        </div>
+
+        <button class="cta-button" onclick="window.location.href='mailto:your-email@example.com'">
+            LET'S WORK TOGETHER
+        </button>
+
+        <p class="footer-note">Hand-coded in 2026 • Verified Developer Portfolio</p>
+    </div>
+
+</body>
 </html>
