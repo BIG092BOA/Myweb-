@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Okoli Ifenna Augustine | Portfolio</title>
     <style>
-        /* CSS VARIABLES - The "Paint Palette" */
+        /* CSS VARIABLES */
         :root {
             --primary: #58a6ff;
             --secondary: #bc8cf2;
@@ -24,17 +24,15 @@
             background-color: var(--bg);
             background-image: radial-gradient(circle at top right, #1d2127, #0d1117);
             color: #c9d1d9;
-            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            font-family: 'Segoe UI', Roboto, sans-serif;
             display: flex;
             justify-content: center;
             align-items: center;
             min-height: 100vh;
             margin: 0;
             padding: 20px;
-            overflow-x: hidden;
         }
 
-        /* THE CARD - Glassmorphism Style */
         .container {
             background: var(--card-bg);
             backdrop-filter: blur(12px);
@@ -53,7 +51,6 @@
             to { opacity: 1; transform: translateY(0); }
         }
 
-        /* PHOTO SECTION */
         .avatar-ring {
             width: 110px;
             height: 110px;
@@ -61,7 +58,6 @@
             background: linear-gradient(45deg, var(--primary), var(--secondary));
             margin: 0 auto 20px;
             padding: 4px;
-            box-shadow: 0 0 20px rgba(88, 166, 255, 0.3);
         }
 
         .avatar-placeholder {
@@ -75,35 +71,10 @@
             font-weight: 800;
             font-size: 2.2rem;
             color: white;
-            text-shadow: 0 0 10px var(--primary);
         }
 
-        h1 {
-            font-size: 1.6rem;
-            margin: 10px 0 5px;
-            letter-spacing: -0.5px;
-            color: white;
-            text-transform: uppercase;
-        }
-
-        .tagline {
-            color: var(--primary);
-            font-size: 0.85rem;
-            font-weight: 700;
-            margin-bottom: 30px;
-            text-transform: uppercase;
-            letter-spacing: 1.5px;
-        }
-
-        /* SKILLS SECTION (Wireframe logic) */
-        .section-label {
-            text-align: left;
-            font-size: 0.75rem;
-            color: #8b949e;
-            margin-bottom: 12px;
-            font-weight: bold;
-            padding-left: 5px;
-        }
+        h1 { font-size: 1.6rem; margin: 10px 0; color: white; text-transform: uppercase; }
+        .tagline { color: var(--primary); font-size: 0.85rem; font-weight: 700; letter-spacing: 1.5px; margin-bottom: 30px; }
 
         .skill-item {
             background: #161b22;
@@ -113,29 +84,9 @@
             display: flex;
             align-items: center;
             border: 1px solid var(--border);
-            cursor: pointer;
         }
 
-        .skill-item:hover {
-            border-color: var(--primary);
-            background: #21262d;
-            transform: scale(1.02);
-        }
-
-        .icon { 
-            margin-right: 15px; 
-            font-size: 1.3rem;
-            background: #0d1117;
-            padding: 8px;
-            border-radius: 10px;
-        }
-
-        /* THE CLICKABLE BUTTON */
-        .cta-link {
-            text-decoration: none;
-            display: block;
-            margin-top: 30px;
-        }
+        .icon { margin-right: 15px; font-size: 1.3rem; }
 
         .cta-button {
             background: linear-gradient(135deg, #238636, #2ea043);
@@ -145,9 +96,8 @@
             border: none;
             width: 100%;
             font-weight: 800;
-            font-size: 1rem;
+            margin-top: 20px;
             cursor: pointer;
-            box-shadow: 0 10px 20px rgba(35, 134, 54, 0.4);
             animation: pulse 2.5s infinite;
         }
 
@@ -155,15 +105,6 @@
             0% { transform: scale(1); box-shadow: 0 0 0 0 rgba(35, 134, 54, 0.7); }
             70% { transform: scale(1.03); box-shadow: 0 0 0 15px rgba(35, 134, 54, 0); }
             100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(35, 134, 54, 0); }
-        }
-
-        .cta-button:active { transform: scale(0.96); }
-
-        .footer {
-            margin-top: 30px;
-            font-size: 0.7rem;
-            color: #484f58;
-            letter-spacing: 0.5px;
         }
     </style>
 </head>
@@ -177,27 +118,35 @@
         <h1>Okoli Ifenna Augustine</h1>
         <div class="tagline">Full-Stack Mobile Architect</div>
 
-        <div class="section-label">CORE SPECIALTIES</div>
-        
-        <div class="skill-item">
-            <span class="icon">💻</span>
-            <span>Python & Backend Logic</span>
-        </div>
+        <div class="skill-item"><span class="icon">💻</span><span>Python & Backend Logic</span></div>
+        <div class="skill-item"><span class="icon">🎨</span><span>UI/UX & Branding</span></div>
+        <div class="skill-item"><span class="icon">📱</span><span>Mobile-First Web Dev</span></div>
 
-        <div class="skill-item">
-            <span class="icon">🎨</span>
-            <span>UI/UX & Branding (Canva)</span>
-        </div>
-
-        <div class="skill-item">
-            <span class="icon">📱</span>
-            <span>Mobile-First Web Development</span>
-        </div>
-
-        <a href="mailto:Okoliifenna59@gmail.com?subject=Project%20Inquiry" class="cta-link">
-            <button class="cta-button">
-                LET'S WORK TOGETHER
-            </button>
+        <a href="mailto:Okoliifenna59@gmail.com?subject=Project%20Inquiry" style="text-decoration: none;">
+            <button class="cta-button">LET'S WORK TOGETHER</button>
         </a>
+    </div>
 
-        <p class="footer">© 2026 • Verified Professional Developer</p>
+    <script>
+        function welcomeUser() {
+            const hours = new Date().getHours();
+            let greeting;
+
+            if (hours < 12) {
+                greeting = "¡Buenos días! Welcome to my portfolio.";
+            } else if (hours < 18) {
+                greeting = "¡Buenas tardes! Hope you're having a productive day.";
+            } else {
+                greeting = "¡Buenas noches! Thanks for visiting my site.";
+            }
+            
+            // This displays the message to the user
+            alert(greeting);
+        }
+
+        // Run the function as soon as the page finishes loading
+        window.onload = welcomeUser;
+    </script>
+
+</body>
+</html>
