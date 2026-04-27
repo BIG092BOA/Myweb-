@@ -3,9 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Okoli Ifenna Augustine | Portfolio</title>
+    <title>Okoli Ifenna Augustine | Portfolio & Task Lab</title>
     <style>
-        /* CSS VARIABLES */
+        /* CSS VARIABLES - THE PAINT */
         :root {
             --primary: #58a6ff;
             --secondary: #bc8cf2;
@@ -24,7 +24,7 @@
             background-color: var(--bg);
             background-image: radial-gradient(circle at top right, #1d2127, #0d1117);
             color: #c9d1d9;
-            font-family: 'Segoe UI', Roboto, sans-serif;
+            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
             display: flex;
             justify-content: center;
             align-items: center;
@@ -33,6 +33,7 @@
             padding: 20px;
         }
 
+        /* THE CONTAINER */
         .container {
             background: var(--card-bg);
             backdrop-filter: blur(12px);
@@ -51,43 +52,73 @@
             to { opacity: 1; transform: translateY(0); }
         }
 
+        /* BRANDING */
         .avatar-ring {
-            width: 110px;
-            height: 110px;
+            width: 100px;
+            height: 100px;
             border-radius: 50%;
             background: linear-gradient(45deg, var(--primary), var(--secondary));
             margin: 0 auto 20px;
             padding: 4px;
+            box-shadow: 0 0 15px rgba(88, 166, 255, 0.3);
         }
 
         .avatar-placeholder {
-            width: 100%;
-            height: 100%;
+            width: 100%; height: 100%;
             background: #0d1117;
             border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-weight: 800;
-            font-size: 2.2rem;
-            color: white;
+            display: flex; align-items: center; justify-content: center;
+            font-weight: 800; font-size: 2rem; color: white;
         }
 
-        h1 { font-size: 1.6rem; margin: 10px 0; color: white; text-transform: uppercase; }
-        .tagline { color: var(--primary); font-size: 0.85rem; font-weight: 700; letter-spacing: 1.5px; margin-bottom: 30px; }
+        h1 { font-size: 1.5rem; margin: 10px 0 5px; color: white; text-transform: uppercase; }
+        .tagline { color: var(--primary); font-size: 0.8rem; font-weight: 700; letter-spacing: 1.5px; margin-bottom: 25px; text-transform: uppercase; }
 
-        .skill-item {
+        /* INTERACTIVE TASK LIST */
+        .section-label {
+            text-align: left; font-size: 0.75rem; color: #8b949e;
+            margin-bottom: 12px; font-weight: bold; text-transform: uppercase;
+        }
+
+        .task-list { margin-bottom: 25px; }
+
+        .task-item {
             background: #161b22;
-            margin: 12px 0;
+            margin: 10px 0;
             padding: 16px;
             border-radius: 15px;
             display: flex;
+            justify-content: space-between;
             align-items: center;
             border: 1px solid var(--border);
+            cursor: pointer;
         }
 
-        .icon { margin-right: 15px; font-size: 1.3rem; }
+        .task-item:hover { border-color: var(--primary); transform: scale(1.02); }
 
+        .task-item.completed {
+            border-color: var(--success);
+            background: rgba(35, 134, 54, 0.1);
+        }
+        
+        .task-item.completed span { 
+            text-decoration: line-through;
+            color: #8b949e;
+        }
+
+        .status-dot {
+            width: 10px; height: 10px;
+            border-radius: 50%;
+            background: var(--primary);
+            box-shadow: 0 0 8px var(--primary);
+        }
+
+        .completed .status-dot {
+            background: var(--success);
+            box-shadow: 0 0 8px var(--success);
+        }
+
+        /* THE PULSING BUTTON */
         .cta-button {
             background: linear-gradient(135deg, #238636, #2ea043);
             color: white;
@@ -96,14 +127,15 @@
             border: none;
             width: 100%;
             font-weight: 800;
-            margin-top: 20px;
+            font-size: 1rem;
             cursor: pointer;
+            box-shadow: 0 10px 20px rgba(35, 134, 54, 0.3);
             animation: pulse 2.5s infinite;
         }
 
         @keyframes pulse {
             0% { transform: scale(1); box-shadow: 0 0 0 0 rgba(35, 134, 54, 0.7); }
-            70% { transform: scale(1.03); box-shadow: 0 0 0 15px rgba(35, 134, 54, 0); }
+            70% { transform: scale(1.02); box-shadow: 0 0 0 10px rgba(35, 134, 54, 0); }
             100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(35, 134, 54, 0); }
         }
     </style>
@@ -116,36 +148,59 @@
         </div>
         
         <h1>Okoli Ifenna Augustine</h1>
-        <div class="tagline">Full-Stack Mobile Architect</div>
+        <div class="tagline">Mobile Systems Architect</div>
 
-        <div class="skill-item"><span class="icon">💻</span><span>Python & Backend Logic</span></div>
-        <div class="skill-item"><span class="icon">🎨</span><span>UI/UX & Branding</span></div>
-        <div class="skill-item"><span class="icon">📱</span><span>Mobile-First Web Dev</span></div>
+        <div class="section-label">Dev Learning Path</div>
+        
+        <div class="task-list">
+            <div class="task-item" onclick="toggleTask(this)">
+                <span>Python & HTML Structure</span>
+                <div class="status-dot"></div>
+            </div>
+            <div class="task-item" onclick="toggleTask(this)">
+                <span>CSS Design & Branding</span>
+                <div class="status-dot"></div>
+            </div>
+            <div class="task-item" onclick="toggleTask(this)">
+                <span>JS Logic & Interactivity</span>
+                <div class="status-dot"></div>
+            </div>
+        </div>
 
         <a href="mailto:Okoliifenna59@gmail.com?subject=Project%20Inquiry" style="text-decoration: none;">
-            <button class="cta-button">LET'S WORK TOGETHER</button>
+            <button class="cta-button" id="mainBtn">LET'S WORK TOGETHER</button>
         </a>
     </div>
 
     <script>
-        function welcomeUser() {
-            const hours = new Date().getHours();
-            let greeting;
+        // 1. Time-Based Spanish Greeting
+        window.onload = () => {
+            const currentHour = new Date().getHours();
+            let greetingMsg;
 
-            if (hours < 12) {
-                greeting = "¡Buenos días! Welcome to my portfolio.";
-            } else if (hours < 18) {
-                greeting = "¡Buenas tardes! Hope you're having a productive day.";
+            if (currentHour < 12) {
+                greetingMsg = "¡Buenos días! The morning is for building.";
+            } else if (currentHour < 18) {
+                greetingMsg = "¡Buenas tardes! Your project is coming to life.";
             } else {
-                greeting = "¡Buenas noches! Thanks for visiting my site.";
+                greetingMsg = "¡Buenas noches! Perfect time for deep focus.";
             }
             
-            // This displays the message to the user
-            alert(greeting);
+            alert(greetingMsg);
+        };
+
+        // 2. Task Completion Logic
+        function toggleTask(element) {
+            element.classList.toggle('completed');
+            // Check if all are done?
+            console.log("Trust built: Task status updated.");
         }
 
-        // Run the function as soon as the page finishes loading
-        window.onload = welcomeUser;
+        // 3. Button Visual Feedback
+        document.getElementById('mainBtn').onclick = function() {
+            this.innerText = "OPENING GMAIL...";
+            this.style.background = "#1d2127";
+        };
     </script>
 
 </body>
